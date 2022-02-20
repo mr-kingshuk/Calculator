@@ -23,7 +23,11 @@ function checkSignError() {
 function errorCaught(){
     errSound.currentTime = 0;
     errSound.play();
-    
+    textBox.style.animation = 'shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both';
+    textBox.addEventListener('animationend', ()=>
+    {
+        textBox.style.animation = '';
+    });
 }
 
 
@@ -42,7 +46,7 @@ function equalPress()
        calc();
     }
 }
-
+// no two dot in a number
 
 // play error audio when anything except the 15 characters is entered
 //call function to display output when = is pressed
