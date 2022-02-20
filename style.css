@@ -74,9 +74,34 @@
     --theme3-equal: hsl(198, 20%, 13%);
     --theme3-text-colour2: hsl(0, 0, 100%);
 
+
+    /* backgrounds */
+    /* main bg */
+    --curr-bg1: hsl(222, 26%, 31%);
+    /* toggle bg, keypad bg */
+    --curr-bg2: hsl(223, 31%, 20%);
+    /*typing screen bg  */
+    --curr-bg3: hsl(224, 36%, 15%);
+
+    /* keys */
+    --curr-key1-bg: hsl(225, 21%, 49%);
+    --curr-key1-shadow: hsl(224, 28%, 35%);
+
+    --curr-key2-bg: hsl(6, 63%, 50%);
+    --curr-key2-shadow: hsl(6, 70%, 34%);
+
+    --curr-key3-bg: hsl(30, 25%, 89%);
+    --curr-key3-shadow: hsl(28, 16%, 65%);
+
+    /* text */
+    --curr-text-colour1: hsl(221, 14%, 31%);
+    --curr-equal: hsl(0, 0, 100%);
+    --curr-text-colour2: hsl(0, 0, 100%);
+
     --font-size: 32px;
     --font-weight: 700;
     /* font-family: 'Spartan', sans-serif; */
+    
 }
 
 *
@@ -84,5 +109,103 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+
+    font-family: 'Spartan', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+
 }
+
+.calculator
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--curr-bg1);
+}
+
+.heading
+{
+    padding: 15px 12px;
+    height: 10%;
+    border: 2px solid white;
+    display: flex;
+}
+
+/* typing screen */
+.screen
+{
+    height: 10%;
+
+    margin: 0 12px;
+    display:grid;
+    place-items: center;
+}
+
+.screen .text-box
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    background-color: var(--curr-bg3);
+    border: none;
+}
+
+
+/* Keypad\ */
+.keypad
+{
+    height: 80%;
+    padding: 10px 12px;
+}
+
+.keypad .icons
+{
+    height: 100%;
+    padding: 20px;
+    background-color: var(--curr-bg2);
+    border-radius: 10px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 16px;
+}
+
+.keypad .icons> *
+{
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+
+.keypad .icons .num-sign
+{
+    background-color: var(--curr-key3-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key3-shadow);
+    color:var(--curr-text-colour1);
+}
+
+.keypad .icons .delete
+{
+    background-color: var(--curr-key1-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key1-shadow);
+    font-size: 22px;
+    color:var(--curr-text-colour2);
+}
+
+.keypad .icons .reset
+{
+    grid-column: 1/span 2;
+    background-color: var(--curr-key1-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key1-shadow);
+    font-size: 22px;
+    color:var(--curr-text-colour2);
+}
+
+.keypad .icons .equal
+{
+    grid-column: 3/span 2;
+    background-color: var(--curr-key2-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key2-shadow);
+    color:var(--curr-equal);
+}
+
 
