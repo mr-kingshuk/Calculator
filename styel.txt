@@ -1,0 +1,98 @@
+/* theme1 */
+    /* backgrounds */
+    /* main bg */
+    --theme1-bg1: hsl(222, 26%, 31%);
+    /* toggle bg, keypad bg */
+    --theme1-bg2: hsl(223, 31%, 20%);
+    /*typing screen bg  */
+    --theme1-bg3: hsl(224, 36%, 15%);
+
+    /* keys */
+    /* delete -reset keys */
+    --theme1-key1-bg: hsl(225, 21%, 49%);
+    --theme1-key1-shadow: hsl(224, 28%, 35%);
+
+    /* equal to key */
+    --theme1-key2-bg: hsl(6, 63%, 50%);
+    --theme1-key2-bg: hsl(6, 70%, 34%);
+
+    /* num- sign key */
+    --theme1-key3-bg: hsl(30, 25%, 89%);
+    --theme1-key3-bg: hsl(28, 16%, 65%);
+
+    /* text */
+    /* key colour */
+    --theme1-text-colour1: hsl(221, 14%, 31%);
+    /* equal to colour */
+    --theme1-equal: hsl(0, 0, 100%);
+    /* delete, reset colour */
+    --theme1-text-colour2: hsl(0, 0, 100%);
+    /* header colour */
+    --theme1-text-colour3: hsl(0, 0, 100%);
+
+
+    /* theme2 */
+    /* backgrounds */
+    /* main bg */
+    --theme2-bg1: hsl(0, 0%, 90%);
+    /* toggle bg, keypad bg */
+    --theme2-bg2: hsl(0, 5%, 81%);
+    /*typing screen bg  */
+    --theme2-bg3: hsl(0, 0%, 93%);
+
+    /* keys */
+    /* delete -reset keys */
+    --theme2-key1-bg: hsl(185, 42%, 37%);
+    --theme2-key1-shadow: hsl(185, 58%, 25%);
+
+    /* equal to key */
+    --theme2-key2-bg: hsl(25, 98%, 40%);
+    --theme2-key2-bg: hsl(25, 99%, 27%);
+
+    /* num- sign key */
+    --theme2-key3-bg: hsl(45, 7%, 89%);
+    --theme2-key3-bg: hsl(35, 11%, 61%);
+
+    /* text */
+    /* key colour */
+    --theme2-text-colour1: hsl(60, 10%, 19%);
+    /* equal to colour */
+    --theme2-equal: hsl(0, 0, 100%);
+    /* delete, reset colour */
+    --theme2-text-colour2: hsl(0, 0, 100%);
+    /* header colour */
+    --theme3-text-colour3: hsl(60, 10%, 19%);
+
+
+    /* theme3 */
+    /* backgrounds */
+    /* main bg */
+    --theme3-bg1: hsl(268, 75%, 9%);
+    /* toggle bg, keypad bg */
+    --theme3-bg2:  hsl(268, 71%, 12%);
+    /*typing screen bg  */
+    --theme3-bg3: hsl(268, 71%, 12%);
+
+    /* keys */
+    /* delete -reset keys */
+    --theme3-key1-bg: hsl(281, 89%, 26%);
+    --theme3-key1-shadow: hsl(285, 91%, 52%);
+
+    /* equal to key */
+    --theme3-key2-bg:hsl(176, 100%, 44%);
+    --theme3-key2-bg: hsl(177, 92%, 70%);
+
+    /* num- sign key */
+    --theme3-key3-bg: hsl(268, 47%, 21%);
+    --theme3-key3-bg: hsl(290, 70%, 36%);
+
+    /* text */
+    /* key colour */
+    --theme3-text-colour1: hsl(52, 100%, 62%);
+    /* equal to colour */
+    --theme3-equal: hsl(198, 20%, 13%);
+    /* delete, reset colour */
+    --theme3-text-colour2: hsl(0, 0, 100%);
+    /* header colour */
+    --theme3-text-colour3: hsl(52, 100%, 62%);
+
