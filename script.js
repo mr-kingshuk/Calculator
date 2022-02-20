@@ -57,45 +57,47 @@ function translateDot(percent)
     dot.style.left = `${percent}%`;
 }
 
-
-theme1Box.addEventListener('click', ()=>{
-    changeTheme(theme1);
-    translateDot(6);
+function changeTheme1()
+{
+    console.log('1');
+    if(currTheme != 1)
+    {
+        changeTheme(theme1);
+        translateDot(6);
+        currTheme = 1;
+    }
 }
-);
 
-theme1Text.addEventListener('click', ()=>{
-    changeTheme(theme1);
-    translateDot(6);
+function changeTheme2()
+{
+    console.log('2');
+    if(currTheme != 2)
+    {
+        changeTheme(theme2);
+        translateDot(40);
+        currTheme = 2;
+    }
 }
-);
 
-theme2Box.addEventListener('click', ()=>{
-    changeTheme(theme2);
-    translateDot(40);
+function changeTheme3()
+{
+    console.log('3');
+    if(currTheme != 3)
+    {
+        changeTheme(theme3);
+        translateDot(72);
+        currTheme = 3;
+    }
 }
-);
 
-theme2Text.addEventListener('click', ()=>{
-    changeTheme(theme2);
-    translateDot(40);
-}
-);
+// Click event for Theme1
+theme1Box.addEventListener('click', ()=>{changeTheme1()});
+theme1Text.addEventListener('click', ()=>{changeTheme1()});
 
-theme3Box.addEventListener('click', ()=>{
-    changeTheme(theme3);
-    translateDot(72);
-}
-);
+// Click Event for Theme2
+theme2Box.addEventListener('click', ()=>{changeTheme2()});
+theme2Text.addEventListener('click', ()=>{changeTheme2()});
 
-theme3Text.addEventListener('click', ()=>{
-    changeTheme(theme3);
-    translateDot(72);
-}
-);
-
-            
-       
-                
-
-
+// Click Event for Theme3
+theme3Box.addEventListener('click', ()=>{changeTheme3()});
+theme3Text.addEventListener('click', ()=>{changeTheme3()});
