@@ -1,0 +1,291 @@
+:root
+{
+    /* theme1 */
+    /* backgrounds */
+    /* main bg */
+    --theme1-bg1: hsl(222, 26%, 31%);
+    /* toggle bg, keypad bg */
+    --theme1-bg2: hsl(223, 31%, 20%);
+    /*typing screen bg  */
+    --theme1-bg3: hsl(224, 36%, 15%);
+
+    /* keys */
+    --theme1-key1-bg: hsl(225, 21%, 49%);
+    --theme1-key1-shadow: hsl(224, 28%, 35%);
+
+    --theme1-key2-bg: hsl(6, 63%, 50%);
+    --theme1-key2-bg: hsl(6, 70%, 34%);
+
+    --theme1-key3-bg: hsl(30, 25%, 89%);
+    --theme1-key3-bg: hsl(28, 16%, 65%);
+
+    /* text */
+    --theme1-text-colour1: hsl(221, 14%, 31%);
+    --theme1-equal: hsl(0, 0, 100%);
+    --theme1-text-colour2: hsl(0, 0, 100%);
+
+
+    /* theme2 */
+    /* backgrounds */
+    /* main bg */
+    --theme2-bg1: hsl(0, 0%, 90%);
+    /* toggle bg, keypad bg */
+    --theme2-bg2: hsl(0, 5%, 81%);
+    /*typing screen bg  */
+    --theme2-bg3: hsl(0, 0%, 93%);
+
+    /* keys */
+    --theme2-key1-bg: hsl(185, 42%, 37%);
+    --theme2-key1-shadow: hsl(185, 58%, 25%);
+
+    --theme2-key2-bg: hsl(25, 98%, 40%);
+    --theme2-key2-bg: hsl(25, 99%, 27%);
+
+    --theme2-key3-bg: hsl(45, 7%, 89%);
+    --theme2-key3-bg: hsl(35, 11%, 61%);
+
+    /* text */
+    --theme2-text-colour1: hsl(60, 10%, 19%);
+    --theme2-equal: hsl(0, 0, 100%);
+    --theme2-text-colour2: hsl(0, 0, 100%);
+
+
+    /* theme3 */
+    /* backgrounds */
+    /* main bg */
+    --theme3-bg1: hsl(268, 75%, 9%);
+    /* toggle bg, keypad bg */
+    --theme3-bg2:  hsl(268, 71%, 12%);
+    /*typing screen bg  */
+    --theme3-bg3: hsl(268, 71%, 12%);
+
+    /* keys */
+    --theme3-key1-bg: hsl(281, 89%, 26%);
+    --theme3-key1-shadow: hsl(285, 91%, 52%);
+
+    --theme3-key2-bg:hsl(176, 100%, 44%);
+    --theme3-key2-bg: hsl(177, 92%, 70%);
+
+    --theme3-key3-bg: hsl(268, 47%, 21%);
+    --theme3-key3-bg: hsl(290, 70%, 36%);
+
+    /* text */
+    --theme3-text-colour1: hsl(52, 100%, 62%);
+    --theme3-equal: hsl(198, 20%, 13%);
+    --theme3-text-colour2: hsl(0, 0, 100%);
+
+
+    /* backgrounds */
+    /* main bg */
+    --curr-bg1: hsl(222, 26%, 31%);
+    /* toggle bg, keypad bg */
+    --curr-bg2: hsl(223, 31%, 20%);
+    /*typing screen bg  */
+    --curr-bg3: hsl(224, 36%, 15%);
+
+    /* keys */
+    --curr-key1-bg: hsl(225, 21%, 49%);
+    --curr-key1-shadow: hsl(224, 28%, 35%);
+
+    --curr-key2-bg: hsl(6, 63%, 50%);
+    --curr-key2-shadow: hsl(6, 70%, 34%);
+
+    --curr-key3-bg: hsl(30, 25%, 89%);
+    --curr-key3-shadow: hsl(28, 16%, 65%);
+
+    /* text */
+    --curr-text-colour1: hsl(221, 14%, 31%);
+    --curr-equal: white;
+    --curr-text-colour2: white;
+ 
+}
+
+*
+{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+    font-family: 'Spartan', sans-serif;
+    font-size: 32px;
+    font-weight: 700;
+
+}
+
+.calculator
+{
+    width: 100vw;
+    height: 100vh;
+    background-color: var(--curr-bg1);
+}
+
+/* heading */
+.heading
+{
+    height: 15%;
+    width: 90%;
+    padding-bottom: 25px;
+    margin: auto;
+
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    color: var(--curr-text-colour2);
+
+}
+
+.heading .indicator
+{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+}
+
+.heading .indicator h2
+{
+    font-size: 20px;
+}
+
+.heading .indicator .toggle-box
+{
+    position: relative;
+    z-index: 0;
+    width: 90px;
+    height: 30px;
+    background-color: var(--curr-bg2);
+    border-radius: 50px;
+
+    display: flex;
+}
+
+.heading .indicator .toggle-box .theme
+{
+    flex: 1;
+    border-radius: 50px;
+    margin: 5px;
+    position: relative;
+    z-index: 0;
+}
+
+.heading .indicator .toggle-box .dot
+{
+    height: 20px;
+    width: 20px;
+    border-radius: 50px;
+    background-color: var(--curr-key2-bg);
+    
+    position: absolute;
+    /* 6% 40% 72% */
+    left: 6%;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.heading .indicator .toggle-box .theme::before 
+{
+    position: absolute;
+    top: -25px;
+    left: 5px;
+    z-index: 10;
+    font-size: 15px;
+}
+
+.heading .indicator .toggle-box .theme1::before 
+{
+    content: '1';
+}
+
+.heading .indicator .toggle-box .theme2::before
+{
+    content: '2';
+}
+
+.heading .indicator .toggle-box .theme3::before
+{
+    content: '3';
+}
+
+/* typing screen */
+.screen
+{
+    height: 10%;
+    width: 90%;
+    margin: auto;
+    display:grid;
+    place-items: center;
+}
+
+.screen .text-box
+{
+    width: 100%;
+    height: 100%;
+    border-radius: 12px;
+    background-color: var(--curr-bg3);
+    border: none;
+}
+
+
+/* Keypad */
+/* outer section to give width */
+/* inner section to adjust to that width */
+.keypad
+{
+    height: 75%;
+    width: 90%;
+    padding: 13px 0;
+    margin: auto;
+}
+
+.keypad .icons
+{
+    height: 100%;
+    width: 100%;
+    padding: 20px;
+    background-color: var(--curr-bg2);
+    border-radius: 12px;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px 15px;
+}
+
+.keypad .icons> *
+{
+    display: grid;
+    place-items: center;
+    border-radius: 5px;
+}
+
+.keypad .icons .num-sign
+{
+    background-color: var(--curr-key3-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key3-shadow);
+    color:var(--curr-text-colour1);
+}
+
+.keypad .icons .delete
+{
+    background-color: var(--curr-key1-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key1-shadow);
+    font-size: 20px;
+    color:var(--curr-text-colour2);
+}
+
+.keypad .icons .reset
+{
+    grid-column: 1/span 2;
+    background-color: var(--curr-key1-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key1-shadow);
+    font-size: 20px;
+    color:var(--curr-text-colour2);
+}
+
+.keypad .icons .equal
+{
+    grid-column: 3/span 2;
+    background-color: var(--curr-key2-bg);
+    box-shadow: 0px 5px 0px 0px var(--curr-key2-shadow);
+    color:var(--curr-equal);
+}
+
+
