@@ -51,6 +51,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    transition: all 0.15s ease-in-out;
 }
 
 /* responsive sizing */
@@ -64,20 +65,20 @@
 /* heading */
 .heading
 {
-    height: 15%;
+    height: 12%;
     width: 90%;
-    padding-bottom: 25px;
     margin: auto;
 
     display: flex;
-    align-items: flex-end;
+    align-items: center;
+    transform: translateY(13px); 
     justify-content: space-between;
-
 }
 
 .heading h1
 {
     color: var(--text-colour3);
+    transition: all 0.15s ease-in-out;
 }
 
 .heading .indicator
@@ -92,6 +93,7 @@
 {
     font-size: 20px;
     color: var(--text-colour3);
+    transition: all 0.15s ease-in-out;
 }
 
 .heading .indicator .toggle-box
@@ -104,6 +106,7 @@
     border-radius: 50px;
 
     display: flex;
+    transition: all 0.15s ease-in-out; 
 }
 
 .heading .indicator .toggle-box .theme
@@ -125,6 +128,7 @@
     font-size: 15px;
     color: var(--text-colour3);
     cursor: pointer;
+    transition: all 0.15s ease-in-out;
 }
 
 .heading .indicator .toggle-box .dot
@@ -141,7 +145,7 @@
     top: 50%;
     transform: translateY(-50%);
 
-    transition: all 0.1s linear;  
+    transition: all 0.15s linear;  
 }
 
 
@@ -162,6 +166,14 @@
     border-radius: 12px;
     background-color: var(--bg3);
     border: none;
+    outline: none;
+    cursor:pointer;
+    color: var(--text-colour3);
+    padding: 0 30px;
+    text-align: right;
+    caret-color: transparent;
+    letter-spacing: 2px;
+    transition: all 0.15s ease-in-out;
 }
 
 
@@ -170,9 +182,9 @@
 /* inner section to adjust to that width */
 .keypad
 {
-    height: 75%;
+    height: 77%;
     width: 90%;
-    padding: 13px 0;
+    padding: 25px 0;
     margin: auto;
 }
 
@@ -186,12 +198,14 @@
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     gap: 20px 15px;
+    transition: all 0.15s ease-in-out;
 }
 
 .keypad .icons> *
 {
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border-radius: 5px;
 }
 
@@ -200,6 +214,7 @@
     background-color: var(--key3-bg);
     box-shadow: 0px 5px 0px 0px var(--key3-shadow);
     color:var(--text-colour1);
+    transition: all 0.15s ease-in-out;
 }
 
 .keypad .icons .delete
@@ -208,6 +223,7 @@
     box-shadow: 0px 5px 0px 0px var(--key1-shadow);
     font-size: 18px;
     color:var(--text-colour2);
+    transition: all 0.15s ease-in-out;
 }
 
 .keypad .icons .reset
@@ -217,6 +233,7 @@
     box-shadow: 0px 5px 0px 0px var(--key1-shadow);
     font-size: 18px;
     color:var(--text-colour2);
+    transition: all 0.15s ease-in-out;
 }
 
 .keypad .icons .equal
@@ -226,4 +243,5 @@
     box-shadow: 0px 5px 0px 0px var(--key2-shadow);
     font-size: 18px;
     color:var(--equal);
+    transition: all 0.15s ease-in-out;
 }
