@@ -6,10 +6,13 @@ const equalBtn = document.querySelector('.icons .equal');
 
 const textBox = document.querySelector('.text-box');
 const errSound = document.querySelector('.audio');
+const mainBody = document.querySelector('.calculator');
 
 // set of ascii codes of all legal values that can be entered
 const legalValsNum = new Set([48, 49, 50, 51, 52, 53, 54, 55, 56, 57]);
 const legalValsSign = new Set([42, 43, 45, 46, 47]);
+
+var lastSign = '';
 
 
 function checkSignError() {
@@ -23,16 +26,19 @@ function checkSignError() {
 function errorCaught(){
     errSound.currentTime = 0;
     errSound.play();
-    textBox.style.animation = 'shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both';
-    textBox.addEventListener('animationend', ()=>
+
+    mainBody.style.animation = 'shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both';
+    mainBody.addEventListener('animationend', ()=>
     {
-        textBox.style.animation = '';
+        mainBody.style.animation = '';
     });
 }
 
 
 function calc()
 {
+    var stat = textBox.value;
+    
     console.log('calculate');
 }
 
@@ -54,16 +60,28 @@ textBox.addEventListener('keypress', event => {
     if (event.keyCode == 61) {
         equalPress();
     }
+    else if(event.keyCode == 46)
+    {
+        if(event.key == lastSign)
+        {
+            event.preventDefault();
+            errorCaught();
+        }
+        else
+            event.key;
+    }
     else if (!(legalValsNum.has(event.keyCode) || legalValsSign.has(event.keyCode))) {
         event.preventDefault();
-        errorCaught()
+        errorCaught();
     }
     else {
         if ((legalValsSign.has(event.keyCode))) {
             if (checkSignError()) {
                 event.preventDefault();
-                errorCaught()
+                errorCaught();
             }
+            else
+                lastSign = event.key;
         }
         else {
             var lastChar = textBox.value[textBox.value.length - 1];
@@ -98,15 +116,31 @@ signBtn.forEach(btn => {
     btn.addEventListener('click', () => {
 
         if (checkSignError()) {
-            errorCaught()
-
+            errorCaught();
+        }
+        else if(btn.textContent == '.')
+        {
+            if(btn.textContent == lastSign)
+            {
+                errorCaught();
+            }
+            else
+            {
+                textBox.value = textBox.value.concat('.');
+                lastSign ='.';
+            }
         }
         else {
             if (btn.textContent == 'x') {
                 textBox.value = textBox.value.concat('*');
+                lastSign ='*';
             }
             else
+            {
+
                 textBox.value = textBox.value.concat(btn.textContent);
+            lastSign = btn.textContent;    
+            }
         }
     });
 });
