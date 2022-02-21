@@ -91,13 +91,13 @@ function changeTheme3()
 }
 
 // Click event for Theme1
-theme1Box.addEventListener('click', ()=>{changeTheme1()});
-theme1Text.addEventListener('click', ()=>{changeTheme1()});
+theme1Box.addEventListener('click', changeTheme1);
+theme1Text.addEventListener('click', changeTheme1);
 
 // Click Event for Theme2
-theme2Box.addEventListener('click', ()=>{changeTheme2()});
-theme2Text.addEventListener('click', ()=>{changeTheme2()});
+theme2Box.addEventListener('click', changeTheme2);
+theme2Text.addEventListener('click', changeTheme2);
 
 // Click Event for Theme3
-theme3Box.addEventListener('click', ()=>{changeTheme3()});
-theme3Text.addEventListener('click', ()=>{changeTheme3()});
+theme3Box.addEventListener('click', changeTheme3);
+theme3Text.addEventListener('click', changeTheme3);
