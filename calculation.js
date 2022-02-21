@@ -38,8 +38,26 @@ function errorCaught(){
 function calc()
 {
     var stat = textBox.value;
-    
-    console.log('calculate');
+    console.log(stat);
+    var lastS =0;
+    var nextS =0;
+    const plusMinus = new Set([43, 45]);
+    const mulDiv = new Set([42, 47]);
+    const signs = new Set([42, 43, 45, 47]);
+
+
+    // only for multiply and divide
+    for(i=0; i<stat.length; i++)
+    {
+        if(signs.has(stat[i]))
+        {
+            if(mulDiv.has(stat[i]))
+            {
+                
+            }
+            lastS = i;
+        }
+    }
 }
 
 function equalPress()
