@@ -27,7 +27,7 @@ function errorCaught() {
     errSound.currentTime = 0;
     errSound.play();
 
-    mainBody.style.animation = 'shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both';
+    mainBody.style.animation = 'shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both';
     mainBody.addEventListener('animationend', () => {
         mainBody.style.animation = '';
     });
@@ -53,7 +53,9 @@ function equalPress() {
             }
         }
     } 
-    textBox.value = eval(stat);
+    var ans = eval(stat).toString();
+    var ans = ans.includes(".") ? parseFloat(ans).toFixed(2) : ans;
+    textBox.value = ans ;
 }
 // no two dot in a number
 

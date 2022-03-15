@@ -51,7 +51,7 @@
 /* responsive sizing */
 /* buttons text on vertical center align for some reason */
 .calculator {
-  width: 100%;
+  max-width: 1000px;
   height: 100%;
 }
 
@@ -161,7 +161,7 @@
 
 .zero-error{
   height: 20%;
-  font-size: 17px;
+  font-size: 13px;
   font-weight: 700;
   align-self: end;
   padding: 6px 15px;
@@ -180,10 +180,10 @@
     transform: translateX(-3px);
   }
 
-  20%,
+  /* 20%,
   80% {
     transform: translateX(4px);
-  }
+  } */
 
   30%,
   50%,
@@ -203,7 +203,7 @@
 .keypad {
   height: 77%;
   width: 90%;
-  padding: 25px 0;
+  padding:15px 0 25px 0;
   margin: auto;
 }
 
