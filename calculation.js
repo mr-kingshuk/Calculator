@@ -23,46 +23,51 @@ function checkSignError() {
     return false;
 }
 
-function errorCaught(){
+function errorCaught() {
     errSound.currentTime = 0;
     errSound.play();
 
-    mainBody.style.animation = 'shake 1s cubic-bezier(0.36, 0.07, 0.19, 0.97) both';
-    mainBody.addEventListener('animationend', ()=>
-    {
+    mainBody.style.animation = 'shake 0.5s cubic-bezier(0.36, 0.07, 0.19, 0.97) both';
+    mainBody.addEventListener('animationend', () => {
         mainBody.style.animation = '';
     });
 }
 
-
-function calc()
-{
+function equalPress() {
     var stat = textBox.value;
-    textBox.value = eval(stat);
-}
-
-function equalPress()
-{
-    // trying to press equal after sign or at beging
+    //if last character is sign then remove it
     if (checkSignError()) {
-        errorCaught()
+        stat = stat.slice(0, -1)
     }
-    else {
-       calc();
-    }
+    // checking if num/0 exist in the expression
+    for(var i =0;i<stat.length;i++){
+        if(stat[i]=='/')
+        {
+            if(stat[i+1] == '0')
+            {
+                if (typeof (stat[i+2]) == 'undefined' || stat[i+2] == '+' || stat[i+2] == '-' || stat[i+2] == '*' || stat[i+2] == '/' || i+2 >=stat.length){
+                    errorCaught();
+                    document.querySelector('.zero-error').classList.add('error');
+                    return;
+                }
+            }
+        }
+    } 
+    var ans = eval(stat).toString();
+    var ans = ans.includes(".") ? parseFloat(ans).toFixed(2) : ans;
+    textBox.value = ans ;
 }
 // no two dot in a number
 
 // play error audio when anything except the 15 characters is entered
 //call function to display output when = is pressed
 textBox.addEventListener('keypress', event => {
+    document.querySelector('.zero-error').classList.remove('error');
     if (event.keyCode == 61) {
         equalPress();
     }
-    else if(event.keyCode == 46)
-    {
-        if(event.key == lastSign)
-        {
+    else if (event.keyCode == 46) {
+        if (event.key == lastSign) {
             event.preventDefault();
             errorCaught();
         }
@@ -95,62 +100,53 @@ textBox.addEventListener('keypress', event => {
 
 });
 
-
 // play error sound if try to divide with 0
 numBtn.forEach(btn => {
     btn.addEventListener('click', () => {
-        var lastChar = textBox.value[textBox.value.length - 1];
-
-        if (lastChar == '/' && btn.textContent == '0') {
-            errorCaught()
-        }
-        else {
-            textBox.value = textBox.value.concat(btn.textContent);
-        }
+        document.querySelector('.zero-error').classList.remove('error');
+        textBox.value = textBox.value.concat(btn.textContent);
     });
 });
 
 //play error sound if trying to enter sign 2 times 
 signBtn.forEach(btn => {
     btn.addEventListener('click', () => {
-
+        document.querySelector('.zero-error').classList.remove('error');
         if (checkSignError()) {
             errorCaught();
         }
-        else if(btn.textContent == '.')
-        {
-            if(btn.textContent == lastSign)
-            {
+        else if (btn.textContent == '.') {
+            if (btn.textContent == lastSign) {
                 errorCaught();
             }
-            else
-            {
+            else {
                 textBox.value = textBox.value.concat('.');
-                lastSign ='.';
+                lastSign = '.';
             }
         }
         else {
             if (btn.textContent == 'x') {
                 textBox.value = textBox.value.concat('*');
-                lastSign ='*';
+                lastSign = '*';
             }
-            else
-            {
+            else {
 
                 textBox.value = textBox.value.concat(btn.textContent);
-            lastSign = btn.textContent;    
+                lastSign = btn.textContent;
             }
         }
     });
 });
 
 deleteBtn.addEventListener('click', () => {
+    document.querySelector('.zero-error').classList.remove('error');
     textBox.value = textBox.value.slice(0, -1);
 });
 
 resetBtn.addEventListener('click', () => {
+    document.querySelector('.zero-error').classList.remove('error');
     textBox.value = '';
 });
 
 //check for empty 
-equalBtn.addEventListener('click', () => {equalPress()});
+equalBtn.addEventListener('click', () => { equalPress() });
