@@ -45,8 +45,9 @@ function equalPress() {
         {
             if(stat[i+1] == '0')
             {
-                if (typeof (stat[i+2]) == 'undefined' || stat[i+2] == '+' || stat[i+2] == '-' || stat[i+2] == '*' || stat[i+2] == '/' || stat[i+2] == '.' || i+2 >=stat.length){
+                if (typeof (stat[i+2]) == 'undefined' || stat[i+2] == '+' || stat[i+2] == '-' || stat[i+2] == '*' || stat[i+2] == '/' || i+2 >=stat.length){
                     errorCaught();
+                    document.querySelector('.zero-error').classList.add('error');
                     return;
                 }
             }
@@ -59,6 +60,7 @@ function equalPress() {
 // play error audio when anything except the 15 characters is entered
 //call function to display output when = is pressed
 textBox.addEventListener('keypress', event => {
+    document.querySelector('.zero-error').classList.remove('error');
     if (event.keyCode == 61) {
         equalPress();
     }
@@ -99,6 +101,7 @@ textBox.addEventListener('keypress', event => {
 // play error sound if try to divide with 0
 numBtn.forEach(btn => {
     btn.addEventListener('click', () => {
+        document.querySelector('.zero-error').classList.remove('error');
         textBox.value = textBox.value.concat(btn.textContent);
     });
 });
@@ -106,7 +109,7 @@ numBtn.forEach(btn => {
 //play error sound if trying to enter sign 2 times 
 signBtn.forEach(btn => {
     btn.addEventListener('click', () => {
-
+        document.querySelector('.zero-error').classList.remove('error');
         if (checkSignError()) {
             errorCaught();
         }
@@ -134,10 +137,12 @@ signBtn.forEach(btn => {
 });
 
 deleteBtn.addEventListener('click', () => {
+    document.querySelector('.zero-error').classList.remove('error');
     textBox.value = textBox.value.slice(0, -1);
 });
 
 resetBtn.addEventListener('click', () => {
+    document.querySelector('.zero-error').classList.remove('error');
     textBox.value = '';
 });
 
